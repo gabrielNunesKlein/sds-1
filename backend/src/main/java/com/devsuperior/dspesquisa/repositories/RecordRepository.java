@@ -14,8 +14,8 @@ import com.devsuperior.dspesquisa.entities.Record;
 public interface RecordRepository extends JpaRepository<Record, Long>{
 
 	@Query("SELECT obj FROM Record obj WHERE "
-			+ "(coalesce(:min, NULL) IS NULL OR obj.moment >= :min) AND "
-			+ "(coalesce(:max, NULL) IS NULL OR obj.moment <= :max)")
+			+ "(coalesce(:min, null) IS NULL OR obj.moment >= :min) AND "
+			+ "(coalesce(:max, null) IS NULL OR obj.moment <= :max)")
 	Page<Record> findyByMoment(Instant min, Instant max, Pageable pageable);
 
 }
