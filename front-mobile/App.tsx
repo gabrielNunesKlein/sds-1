@@ -9,8 +9,7 @@ import {
   Play_700Bold
 } from '@expo-google-fonts/play';
 
-import Header from './src/components/Header';
-import Homr from './src/Pages/Home';
+import Routes from './src/routes';
 
 export default function App() {
   const [fontsLoad] = useFonts( {
@@ -22,11 +21,10 @@ export default function App() {
     return <AppLoading />
   } else{
     return (
-    <View style={styles.container}>
-      <Header />
-      <Homr />
-      <StatusBar style="auto" />
-    </View>
+      <View style={styles.container}>
+        <Routes />
+        <StatusBar style="auto" />
+      </View>
   );
   }
 
@@ -35,7 +33,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#0B1F34'
+    flex: 1
   },
 });
