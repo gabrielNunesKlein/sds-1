@@ -5,7 +5,7 @@ import { RecordsResponse } from './types';
 import { formatDate } from './helpers';
 import Pagination from './Pagination';
 import Filters from '../../Components/Filters';
-const BASE_URL = 'http://localhost:8081'
+const BASE_URL = 'https://sds1-gnk.herokuapp.com';
 
 const Records = () => {
 

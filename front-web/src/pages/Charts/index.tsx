@@ -5,7 +5,6 @@ import { barOptions, pieOptions } from './chart-options';
 import Chart from 'react-apexcharts';
 import { buildBarSeries, getPlatformChartData, getGenderChartData } from './helpers';
 import axios from 'axios';
-//import { type } from 'os';
 
 type PieCharDate = {
     labels: string[];
@@ -22,7 +21,7 @@ const initialPieDate = {
     series: []
 }
 
-const BASE_URL = 'http://localhost:8081'
+const BASE_URL = 'https://sds1-gnk.herokuapp.com';
 
 const Charts = () => {
     const [barChartData, setBarChartDate] = useState<BarChartDate[]>([]);
@@ -48,14 +47,14 @@ const Charts = () => {
     }, [])
 
     return (
-        <div className="page-container">
+        <div className="page-container"> 
             <Filters link="/records" linkText="VER TABELA"/>
             <div className="chart-container">
                 <div className="top-related">
                     <h1 className="top-related-title">
                         Jogos mais votados
                     </h1>
-                    <div className="gamer-container">
+                    <div className="games-container">
                         <Chart 
                             options={barOptions}
                             type="bar"
@@ -90,5 +89,4 @@ const Charts = () => {
         
     )
 }
-
 export default Charts;
